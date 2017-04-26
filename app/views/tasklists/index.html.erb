@@ -1,8 +1,8 @@
-<h1>メッセージ一覧</h1>
+<h1>タスクリスト一覧</h1>
 
 <ul>
   <% @tasklists.each do |tasklist| %>
-    <li><%= link_to tasklist.id, tasklist %> : <%= tasklist.content %></li>
+    <li><%= link_to tasklist.id, tasklist %> : <%= tasklist.status %> > <%= tasklist.content %></li>
   <% end %>
 </ul>
 
