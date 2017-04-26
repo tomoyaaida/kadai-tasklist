@@ -1,4 +1,6 @@
 class TasklistsController < ApplicationController
+  before_action :set_tasklist, only: [:show, :edit, :update, :destroy]
+  
  def index
   @tasklists = Tasklist.all
  end
@@ -45,6 +47,10 @@ class TasklistsController < ApplicationController
 
    flash[:success] = 'Tasklist は正常に削除されました'
    redirect_to tasklists_url
+ end
+  
+ def set_message
+    @tasklist = Tasklist.find(params[:id])
  end
   
   def tasklist_params
