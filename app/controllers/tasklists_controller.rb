@@ -23,12 +23,12 @@ class TasklistsController < ApplicationController
   end
  end
 
-　def edit
-　 @tasklist = Tasklist.find(params[:id])
-　end
+  def edit
+    @tasklist = Tasklist.find(params[:id])
+  end
 
-　def update
-　 @tasklist = Tasklist.find(params[:id])
+  def update
+    @tasklist = Tasklist.find(params[:id])
 
     if @tasklist.update(tasklist_params)
       flash[:success] = 'Tasklist は正常に更新されました'
@@ -37,7 +37,7 @@ class TasklistsController < ApplicationController
       flash.now[:danger] = 'Tasklist は更新されませんでした'
       render :edit
     end
-　end
+  end
 
   def destroy
     @tasklist = Tasklist.find(params[:id])
@@ -52,4 +52,3 @@ class TasklistsController < ApplicationController
   end
   
 end
-
